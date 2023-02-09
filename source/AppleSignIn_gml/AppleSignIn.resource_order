@@ -1,0 +1,24 @@
+{
+  "FolderOrderSettings": [
+    {"name":"Apple SignIn Demo","order":3,"path":"folders/Apple SignIn Demo.yy",},
+    {"name":"Objects","order":2,"path":"folders/Apple SignIn Demo/Objects.yy",},
+    {"name":"Scripts","order":3,"path":"folders/Apple SignIn Demo/Scripts.yy",},
+    {"name":"Apple SignIn","order":5,"path":"folders/Apple SignIn.yy",},
+    {"name":"YoYo Extensions Assets","order":4,"path":"folders/YoYo Extensions Assets.yy",},
+    {"name":"Font","order":1,"path":"folders/YoYo Extensions Assets/Font.yy",},
+    {"name":"Objects","order":2,"path":"folders/YoYo Extensions Assets/Objects.yy",},
+    {"name":"Sprites","order":3,"path":"folders/YoYo Extensions Assets/Sprites.yy",},
+  ],
+  "ResourceOrderSettings": [
+    {"name":"Spr_YoYo_textbox","order":2,"path":"sprites/Spr_YoYo_textbox/Spr_YoYo_textbox.yy",},
+    {"name":"ParseAppleCredentialResponse","order":1,"path":"scripts/ParseAppleCredentialResponse/ParseAppleCredentialResponse.yy",},
+    {"name":"ParseAppleSignInResponse","order":2,"path":"scripts/ParseAppleSignInResponse/ParseAppleSignInResponse.yy",},
+    {"name":"Font_YoYo_50","order":2,"path":"fonts/Font_YoYo_50/Font_YoYo_50.yy",},
+    {"name":"Obj_YoYo_text","order":1,"path":"objects/Obj_YoYo_text/Obj_YoYo_text.yy",},
+    {"name":"Spr_YoYo_button","order":1,"path":"sprites/Spr_YoYo_button/Spr_YoYo_button.yy",},
+    {"name":"Room_AppleSignIn","order":4,"path":"rooms/Room_AppleSignIn/Room_AppleSignIn.yy",},
+    {"name":"Font_YoYo_30","order":1,"path":"fonts/Font_YoYo_30/Font_YoYo_30.yy",},
+    {"name":"AppleSignInMac","order":1,"path":"extensions/AppleSignInMac/AppleSignInMac.yy",},
+    {"name":"Obj_YoYo_textbox","order":2,"path":"objects/Obj_YoYo_textbox/Obj_YoYo_textbox.yy",},
+  ],
+}
