@@ -2,7 +2,7 @@
 
 # The Asynchronous System Event
 
-When using the Apple Sign In extension in your projects, you will be calling different functions that  will trigger "callbacks" from the Apple API. What this means is that certain functions will be run but won't return a result until sometime in the future - which could be the next step, or it could be a few seconds later.
+When using the Apple Sign In extension in your projects, you'll call different functions that trigger "callbacks" from the Apple API. What this means is that certain functions will be run but won't return a result until sometime in the future - which could be the next step, or it could be a few seconds later.
 
 This result, when it comes, is called the "callback" and is Apple's Sign In API responding to something you’ve done. This callback is dealt with in the Asynchronous System Event.
 

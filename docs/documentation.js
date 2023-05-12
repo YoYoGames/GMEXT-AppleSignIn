@@ -239,15 +239,17 @@ function RegisterCallbacks() {}
 /**
  * @module general
  * @title General
- * @desc The rest of this manual contains a reference guide to all the functions used by the Apple Sign In
- * Extension, along with any constants that they may use or return and examples of code that use them. 
+ * @desc This is a reference guide to all the functions used by the Apple Sign In Extension,
+ * along with any constants that they may use or return and examples of code that use them. 
  * Some of the examples are Extended Examples that also show code from callbacks in the [Asynchronous 
  * System Event](https://manual.yoyogames.com/The_Asset_Editors/Object_Properties/Async_Events/System.htm).
+ * 
  * Use of this extension is required by Apple whenever your app provides a third-party sign in option (for 
  * example, Facebook), and is available for iOS/tvOS 13 and above and macOS 10.15 (Beta) and above. 
  * To test your apps, you'll need to use the latest beta version of Xcode 11 and update your devices to 
  * the latest OS versions (which may require you to update to beta versions).
- * Additionally, for macOS to use this extension you will be required to provide a **Signing Identifier** in the 
+ * 
+ * Additionally, for macOS, to use this extension you will be required to provide a **Signing Identifier** in the 
  * [macOS Game Options](https://manual.yoyogames.com/Settings/Game_Options/macOS.htm):
  *
  * ![Signing Identifier](assets/macOS_Game_Options_Signing_Identifier.png "Signing Identifier")
@@ -256,9 +258,9 @@ function RegisterCallbacks() {}
  * 
  * ![Enable Sign In with Apple](assets/macOS_Game_Options_Enable_SignIn_with_Apple.png "Enable Sign In with Apple")
  *
- * Also note that if you are compiling for macOS using the VM and not the YYC, then Xcode will not be 
+ * Also note that if you are compiling for macOS using the **VM** and *not* the YYC, then Xcode will not be 
  * used and so you need to take an extra step to ensure that your game will function correctly. This 
- * requires you to retrieve a Provisioning Profile for your game
+ * requires you to retrieve a **Provisioning Profile** for your game
  * (see the article [Download manual provisioning profiles](https://help.apple.com/xcode/mac/current/#/deva899b4fe5) for more information)
  * and add it into GameMaker as an [included file](https://manual.yoyogames.com/Settings/Included_Files.htm):
  * 
