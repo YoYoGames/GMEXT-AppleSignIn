@@ -4,9 +4,9 @@
  * @func AppleSignIn_CrossPlatform_AddScope
  * @desc This function adds a scope for the sign in request to request additional pieces of user data.
  * 
- * The additional data you can request are for an email address and the user's full name. These are requested using the ${constant.applesignin_scope} constants.
+ * The additional data you can request are for an email address and the user's full name. These are requested using the ${constant.applesignin_scope|constant.mac_applesignin_scope} constants.
  * 
- * @param {constant.applesignin_scope} scope One of the scope constants
+ * @param {constant.applesignin_scope|constant.mac_applesignin_scope} scope One of the scope constants
  * 
  * @example
  * The following code example would go in the ${event.step} of a button object to check for a user wanting to sign in using the Apple Sign In API:
@@ -121,7 +121,7 @@ function AppleSignIn_CrossPlatform_ClearScopes() {}
  * }
  * ```
  * 
- * A global variable stores the sign in state for future reference, where -1 means not signed in / no action has been taken. You can use one of the ${constant.applesignin_state} / ${constant.mac_applesignin_state} extension constants to check for other states as required.
+ * A global variable stores the sign in state for future reference, where -1 means not signed in / no action has been taken. You can use one of the ${constant.applesignin_state|constant.mac_applesignin_state} extension constants to check for other states as required.
  * 
  * @func_end
  */
@@ -131,14 +131,14 @@ function AppleSignIn_CrossPlatform_AuthoriseUser() {}
  * @func AppleSignIn_CrossPlatform_GetCredentialState
  * @desc This function retrieves the credential sign in state for your game.
  * 
- * You supply the identity token string for the session (returned as part of the callback when you use the function ${function.AppleSignIn_CrossPlatform_AuthoriseUser} and the function will trigger an ${event.social} where the {var.async_load} DS map **"id"** key will be ${constant.applesignin_credential_response}.
+ * You supply the identity token string for the session (returned as part of the callback when you use the function ${function.AppleSignIn_CrossPlatform_AuthoriseUser} and the function will trigger an ${event.social} where the {var.async_load} DS map **"id"** key will be `applesignin_credential_response` or `mac_applesignin_credential_response`.
  * 
- * The ${var.async_load} map will then have a further key "response_json", which will hold a JSON string which can be parsed into a DS map using the function ${function.json_decode}. This map will have the key **"status"**, which will be one of the ${constant.applesignin} constants.
+ * The ${var.async_load} map will then have a further key "response_json", which will hold a JSON string which can be parsed into a DS map using the function ${function.json_decode}. This map will have the key **"status"**, which will be one of the ${constant.applesignin_state|constant.mac_applesignin_state} constants.
  * @param {string} token The session identity token
  * 
  * @event social
  * @desc The event of `applesignin_credential_response`. It contains the following: 
- * @member {constant.applesignin_state} status The authorisation status of the user
+ * @member {constant.applesignin_state|constant.mac_applesignin_state} status The authorisation status of the user
  * @event_end
  * 
  * @example
@@ -259,10 +259,24 @@ function Mac_AppleSignIn_RegisterWindow() {}
 /** 
  * @module home
  * @title Home
- * @desc This wiki is designed for you to use as a reference to the different Apple Sign In extension functions for iOS, tvOS and macOS, and as such does not contain a tutorial on how to set up the API in your games. We recommend that before doing anything with this extension, you take a moment to look over the official Apple Sign In API documentation, as it will familiarise you with many of the terms and concepts required to use the extension correctly:
+ * @desc This is the Apple Sign In extension wiki.
+ * 
+ * Use of this extension is required by Apple whenever your app provides a third-party sign in option (for example, Facebook), and is available for iOS/tvOS 13 and above and macOS 10.15 (Beta) and above.
+ * 
+ * This wiki is meant to be used as a reference to the different Apple Sign In extension functions for iOS, tvOS and macOS, and as such does not contain a tutorial on how to set up the API in your games.
+ * We recommend that before doing anything with this extension, you take a moment to look over the official Apple Sign In API documentation, as it will familiarise you with many of the terms and concepts required to use the extension correctly:
+ * 
  * * [Apple Developer: Sign In With Apple](https://developer.apple.com/sign-in-with-apple/get-started/)
  * 
- * Note that this manual covers *both* the macOS and iOS/tvOS Sign In functions, as they **work exactly the same way and have only been separated into two extensions so that you can use one or the other or both as required**. This means that you may need to do certain checks using the [`os_type`](https://manual-en.yoyogames.com/GameMaker_Language/GML_Reference/OS_And_Compiler/os_type.htm) variable to call the correct function for the current platform the game is running on, but the bulk of the code will be the same regardless. The examples in this manual are based on the iOS/tvOS functions and constants, so for macOS you would simply swap (or duplicate, if developing for both platforms) the function/constant names for the macOS versions and the Sign In functionality should work exactly the same.
+ * [[NOTE: The macOS and iOS/tvOS Sign In functions **work exactly the same way and have only been separated into two extensions so that you can use one or the other or both as required**.
+ * This means that you may need to do certain checks using the [`os_type`](https://manual-en.yoyogames.com/GameMaker_Language/GML_Reference/OS_And_Compiler/os_type.htm) variable to call the correct function for the current platform the game is running on, but the bulk of the code will be the same regardless.
+ * This wiki provides a reference of the additional functions in the `AppleSignInCrossPlatformFunctions` script asset, included with the demo project. These functions are named `AppleSignIn_CrossPlatform_*` and call the correct underlying function, independent of the current [`os_type`](https://manual-en.yoyogames.com/GameMaker_Language/GML_Reference/OS_And_Compiler/os_type.htm).
+ * The tvOS/iOS constants and their macOS counterparts, however, currently do not share the same value internally and so you should make sure to always check against **both** constants when using the `AppleSignIn_CrossPlatform_*` functions in your code.]]
+ * 
+ * @section Guides
+ * @description The following guides are available for this extension: 
+ * @ref page.setup
+ * @section_end
  * 
  * @section Modules
  * @description The following modules are available in the Apple Sign In extension: 
@@ -275,38 +289,8 @@ function Mac_AppleSignIn_RegisterWindow() {}
  * @module general
  * @title General
  * @desc This is a reference guide to all the functions used by the Apple Sign In Extension,
- * along with any constants that they may use or return and examples of code that use them. 
+ * along with any constants that they may use or return and examples of code that use them.
  * Some of the examples are Extended Examples that also show code from callbacks in the ${event.social}.
- * 
- * Use of this extension is required by Apple whenever your app provides a third-party sign in option (for 
- * example, Facebook), and is available for iOS/tvOS 13 and above and macOS 10.15 (Beta) and above. 
- * To test your apps, you'll need to use the latest beta version of Xcode 11 and update your devices to 
- * the latest OS versions (which may require you to update to beta versions).
- * 
- * Additionally, for macOS, to use this extension you will be required to provide a **Signing Identifier** in the 
- * [macOS Game Options](https://manual.yoyogames.com/Settings/Game_Options/macOS.htm):
- *
- * ![Signing Identifier](assets/macOS_Game_Options_Signing_Identifier.png "Signing Identifier")
- *
- * And you will also need to check the **Enable Sign In With Apple** checkbox in the Social section:
- * 
- * ![Enable Sign In with Apple](assets/macOS_Game_Options_Enable_SignIn_with_Apple.png "Enable Sign In with Apple")
- *
- * Also note that if you are compiling for macOS using the **VM** and *not* the YYC, then Xcode will not be 
- * used and so you need to take an extra step to ensure that your game will function correctly. This 
- * requires you to retrieve a **Provisioning Profile** for your game
- * (see the article [Download manual provisioning profiles](https://help.apple.com/xcode/mac/current/#/deva899b4fe5) for more information)
- * and add it into GameMaker as an [included file](https://manual.yoyogames.com/Settings/Included_Files.htm):
- * 
- * ![Provisioning Profile in Included Files](assets/Provisioning_Profile_in_Included_Files.png "Provisioning Profile")
- * 
- * This profile should be valid for the **App ID**, **Team Identifier** and **Signing Identifier** used in the [Game Options](https://manual.yoyogames.com/Settings/Game_Options/macOS.htm).
- * 
- * Once you have everything set up, it's simply a case of adding a button object into your game and having 
- * it call the appropriate functions when pressed, and then parsing the ${event.social} to get the necessary data from the callback.
- *
- * [[WARNING: This functionality cannot be tested by running the game from the GameMaker IDE
- * and it is required that you create an executable for the target platform to properly test.]]
  *
  * @section_func
  * @ref function.AppleSignIn_CrossPlatform_AddScope
@@ -314,6 +298,11 @@ function Mac_AppleSignIn_RegisterWindow() {}
  * @ref function.AppleSignIn_CrossPlatform_AuthoriseUser
  * @ref function.AppleSignIn_CrossPlatform_GetCredentialState
  * @ref function.Mac_AppleSignIn_RegisterWindow
+ * @section_end
+ * 
+ * @section_const
+ * @ref applesignin_*
+ * @ref mac_applesignin_*
  * @section_end
  * 
  * @module_end
