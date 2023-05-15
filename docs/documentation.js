@@ -1,10 +1,80 @@
+// CONSTANTS
+
+/** 
+ * @const applesignin_scope
+ * @desc These constants specify the scope.
+ * @member applesignin_scope_fullname Requests the user's full name.
+ * @member applesignin_scope_email Requests the user's e-mail address.
+ * @const_end
+ */
+
+/** 
+ * @const applesignin_response
+ * @desc These constants specify the type of response.
+ * @member applesignin_signin_response Requests the user's full name.
+ * @member applesignin_credential_response Requests the user's e-mail address.
+ * @const_end
+ */
+
+/** 
+ * @const applesignin_realuserstatus
+ * @desc These constants specify a user status.
+ * @member applesignin_realuserstatus_likelyreal The user is likely a real person.
+ * @member applesignin_realuserstatus_unknown The system hasn't determined whether the user might be a real person.
+ * @member applesignin_realuserstatus_unsupported This indicates that the IAP product ID has already been added to the internal product list.
+ * @const_end
+ */
+
+/** 
+ * @const applesignin_state
+ * @desc These constants specify the user's authorisation state.
+ * @member applesignin_state_authorized The user has been authorised and has a valid session.
+ * @member applesignin_state_revoked The user's credentials have been revoked and the session terminated.
+ * @member applesignin_state_not_found The user doesn't appear to have a session with your app.
+ * @const_end
+ */
+
+/** 
+ * @const mac_applesignin_scope
+ * @desc These constants specify the scope.
+ * @member mac_applesignin_scope_fullname Requests the user's full name.
+ * @member mac_applesignin_scope_email Requests the user's e-mail address.
+ * @const_end
+ */
+
+/** 
+ * @const mac_applesignin_response
+ * @desc These constants specify the type of response.
+ * @member mac_applesignin_signin_response Requests the user's full name.
+ * @member mac_applesignin_credential_response Requests the user's e-mail address.
+ * @const_end
+ */
+
+/** 
+ * @const mac_applesignin_realuserstatus
+ * @desc These constants specify a user status.
+ * @member mac_applesignin_realuserstatus_likelyreal The user is likely a real person.
+ * @member mac_applesignin_realuserstatus_unknown The system hasn't determined whether the user might be a real person.
+ * @member mac_applesignin_realuserstatus_unsupported This indicates that the IAP product ID has already been added to the internal product list.
+ * @const_end
+ */
+
+/** 
+ * @const mac_applesignin_state
+ * @desc These constants specify the user's authorisation state.
+ * @member mac_applesignin_state_authorized The user has been authorised and has a valid session.
+ * @member mac_applesignin_state_revoked The user's credentials have been revoked and the session terminated.
+ * @member mac_applesignin_state_not_found The user doesn't appear to have a session with your app.
+ * @const_end
+ */
+
 // FUNCTIONS
 
 /**
  * @func AppleSignIn_CrossPlatform_AddScope
  * @desc This function adds a scope for the sign in request to request additional pieces of user data.
  * 
- * The additional data you can request are for an email address and the user's full name. These are requested using the ${constant.applesignin_scope|constant.mac_applesignin_scope} constants.
+ * The additional data you can request are for an email address and the user's full name. These are requested using the ${constant.applesignin_scope} or ${constant.mac_applesignin_scope} constants.
  * 
  * @param {constant.applesignin_scope|constant.mac_applesignin_scope} scope One of the scope constants
  * 
@@ -121,7 +191,7 @@ function AppleSignIn_CrossPlatform_ClearScopes() {}
  * }
  * ```
  * 
- * A global variable stores the sign in state for future reference, where -1 means not signed in / no action has been taken. You can use one of the ${constant.applesignin_state|constant.mac_applesignin_state} extension constants to check for other states as required.
+ * A global variable stores the sign in state for future reference, where -1 means not signed in / no action has been taken. You can use one of the ${constant.applesignin_state} or ${constant.mac_applesignin_state} extension constants to check for other states as required.
  * 
  * @func_end
  */
@@ -133,7 +203,7 @@ function AppleSignIn_CrossPlatform_AuthoriseUser() {}
  * 
  * You supply the identity token string for the session (returned as part of the callback when you use the function ${function.AppleSignIn_CrossPlatform_AuthoriseUser} and the function will trigger an ${event.social} where the {var.async_load} DS map **"id"** key will be `applesignin_credential_response` or `mac_applesignin_credential_response`.
  * 
- * The ${var.async_load} map will then have a further key "response_json", which will hold a JSON string which can be parsed into a DS map using the function ${function.json_decode}. This map will have the key **"status"**, which will be one of the ${constant.applesignin_state|constant.mac_applesignin_state} constants.
+ * The ${var.async_load} map will then have a further key "response_json", which will hold a JSON string which can be parsed into a DS map using the function ${function.json_decode}. This map will have the key **"status"**, which will be one of the ${constant.applesignin_state} or ${constant.mac_applesignin_state} constants.
  * @param {string} token The session identity token
  * 
  * @event social
@@ -183,76 +253,6 @@ function AppleSignIn_CrossPlatform_GetCredentialState() {}
  * @func_end
  */
 function Mac_AppleSignIn_RegisterWindow() {}
-
-// CONSTANTS
-
-/** 
- * @const applesignin_scope
- * @desc These constants specify the scope.
- * @member applesignin_scope_fullname Requests the user's full name.
- * @member applesignin_scope_email Requests the user's e-mail address.
- * @const_end
- */
-
-/** 
- * @const applesignin_response
- * @desc These constants specify the type of response.
- * @member applesignin_signin_response Requests the user's full name.
- * @member applesignin_credential_response Requests the user's e-mail address.
- * @const_end
- */
-
-/** 
- * @const applesignin_realuserstatus
- * @desc These constants specify a user status.
- * @member applesignin_realuserstatus_likelyreal The user is likely a real person.
- * @member applesignin_realuserstatus_unknown The system hasn't determined whether the user might be a real person.
- * @member applesignin_realuserstatus_unsupported This indicates that the IAP product ID has already been added to the internal product list.
- * @const_end
- */
-
-/** 
- * @const applesignin_state
- * @desc These constants specify the user's authorisation state.
- * @member applesignin_state_authorized The user has been authorised and has a valid session.
- * @member applesignin_state_revoked The user's credentials have been revoked and the session terminated.
- * @member applesignin_state_not_found The user doesn't appear to have a session with your app.
- * @const_end
- */
-
-/** 
- * @const mac_applesignin_scope
- * @desc These constants specify the scope.
- * @member mac_applesignin_scope_fullname Requests the user's full name.
- * @member mac_applesignin_scope_email Requests the user's e-mail address.
- * @const_end
- */
-
-/** 
- * @const mac_applesignin_response
- * @desc These constants specify the type of response.
- * @member mac_applesignin_signin_response Requests the user's full name.
- * @member mac_applesignin_credential_response Requests the user's e-mail address.
- * @const_end
- */
-
-/** 
- * @const mac_applesignin_realuserstatus
- * @desc These constants specify a user status.
- * @member mac_applesignin_realuserstatus_likelyreal The user is likely a real person.
- * @member mac_applesignin_realuserstatus_unknown The system hasn't determined whether the user might be a real person.
- * @member mac_applesignin_realuserstatus_unsupported This indicates that the IAP product ID has already been added to the internal product list.
- * @const_end
- */
-
-/** 
- * @const mac_applesignin_state
- * @desc These constants specify the user's authorisation state.
- * @member mac_applesignin_state_authorized The user has been authorised and has a valid session.
- * @member mac_applesignin_state_revoked The user's credentials have been revoked and the session terminated.
- * @member mac_applesignin_state_not_found The user doesn't appear to have a session with your app.
- * @const_end
- */
 
 // MODULES
 
