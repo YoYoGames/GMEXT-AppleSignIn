@@ -270,8 +270,8 @@ function Mac_AppleSignIn_RegisterWindow() {}
  * 
  * [[NOTE: The macOS and iOS/tvOS Sign In functions **work exactly the same way and have only been separated into two extensions so that you can use one or the other or both as required**.
  * This means that you may need to do certain checks using the [`os_type`](https://manual-en.yoyogames.com/GameMaker_Language/GML_Reference/OS_And_Compiler/os_type.htm) variable to call the correct function for the current platform the game is running on, but the bulk of the code will be the same regardless.
- * This wiki provides a reference of the additional functions in the `AppleSignInCrossPlatformFunctions` script asset, included with the demo project. These functions are named `AppleSignIn_CrossPlatform_*` and call the correct underlying function, independent of the current [`os_type`](https://manual-en.yoyogames.com/GameMaker_Language/GML_Reference/OS_And_Compiler/os_type.htm).
- * The tvOS/iOS constants and their macOS counterparts, however, currently do not share the same value internally and so you should make sure to always check against **both** constants when using the `AppleSignIn_CrossPlatform_*` functions in your code.]]
+ * * This wiki provides a reference of the additional **functions** in the `AppleSignInCrossPlatformFunctions` script asset, included with the demo project. These functions are named `AppleSignIn_CrossPlatform_*` and call the correct underlying function, independent of the current [`os_type`](https://manual-en.yoyogames.com/GameMaker_Language/GML_Reference/OS_And_Compiler/os_type.htm).
+ * * The tvOS/iOS **constants** and their macOS counterparts, however, currently do not share the same value internally and so you should make sure to always check against **both** constants when using the `AppleSignIn_CrossPlatform_*` functions in your code.]]
  * 
  * @section Guides
  * @description The following guides are available for this extension: 
