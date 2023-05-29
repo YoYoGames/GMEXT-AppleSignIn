@@ -20,11 +20,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Objects","folderPath":"folders/YoYo Extensions Assets/Objects.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sprites","folderPath":"folders/YoYo Extensions Assets/Sprites.yy",},
   ],
-  "IncludedFiles": [
-    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"5f9d9c8d-f7bb-499f-8638-136a673efab9.provisionprofile","CopyToMask":-1,"filePath":"datafiles",},
-    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"Apple Sign In Manual.pdf","CopyToMask":-1,"filePath":"datafiles",},
-    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"readme.txt","CopyToMask":-1,"filePath":"datafiles",},
-  ],
+  "IncludedFiles": [],
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
@@ -34,7 +30,6 @@
     {"id":{"name":"Spr_YoYo_textbox","path":"sprites/Spr_YoYo_textbox/Spr_YoYo_textbox.yy",},},
     {"id":{"name":"ParseAppleCredentialResponse","path":"scripts/ParseAppleCredentialResponse/ParseAppleCredentialResponse.yy",},},
     {"id":{"name":"ParseAppleSignInResponse","path":"scripts/ParseAppleSignInResponse/ParseAppleSignInResponse.yy",},},
-    {"id":{"name":"AppleSignInCrossPlatformFunctions","path":"scripts/AppleSignInCrossPlatformFunctions/AppleSignInCrossPlatformFunctions.yy",},},
     {"id":{"name":"Font_YoYo_50","path":"fonts/Font_YoYo_50/Font_YoYo_50.yy",},},
     {"id":{"name":"Obj_YoYo_text","path":"objects/Obj_YoYo_text/Obj_YoYo_text.yy",},},
     {"id":{"name":"Spr_YoYo_button","path":"sprites/Spr_YoYo_button/Spr_YoYo_button.yy",},},
@@ -44,7 +39,6 @@
     {"id":{"name":"Font_YoYo_20","path":"fonts/Font_YoYo_20/Font_YoYo_20.yy",},},
     {"id":{"name":"Spr_YoYo_Background","path":"sprites/Spr_YoYo_Background/Spr_YoYo_Background.yy",},},
     {"id":{"name":"Font_YoYo_30","path":"fonts/Font_YoYo_30/Font_YoYo_30.yy",},},
-    {"id":{"name":"AppleSignInMac","path":"extensions/AppleSignInMac/AppleSignInMac.yy",},},
     {"id":{"name":"Obj_YoYo_textbox","path":"objects/Obj_YoYo_textbox/Obj_YoYo_textbox.yy",},},
     {"id":{"name":"AppleSignIn","path":"extensions/AppleSignIn/AppleSignIn.yy",},},
   ],

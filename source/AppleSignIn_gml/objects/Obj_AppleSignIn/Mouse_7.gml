@@ -1,4 +1,4 @@
 
-AppleSignIn_CrossPlatform_AddScope(mac_applesignin_scope_fullname);
-AppleSignIn_CrossPlatform_AddScope(mac_applesignin_scope_email);
-AppleSignIn_CrossPlatform_AuthoriseUser();
+AppleSignIn_AddScope(applesignin_scope_fullname);
+AppleSignIn_AddScope(applesignin_scope_email);
+AppleSignIn_AuthoriseUser();

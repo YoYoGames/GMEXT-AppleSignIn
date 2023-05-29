@@ -12,7 +12,7 @@
   "androidsourcedir": "",
   "author": "",
   "classname": "YY_AppleSignIn",
-  "copyToTargets": 9007199254740996,
+  "copyToTargets": 9007199254740998,
   "date": "2019-08-12T00:14:17",
   "description": "",
   "exportToGame": true,
@@ -39,13 +39,24 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"AppleSignIn_GetCredentialState","argCount":0,"args":[
             1,
           ],"documentation":"","externalName":"AppleSignIn_GetCredentialState","help":"AppleSignIn_GetCredentialState(identitiy_token)","hidden":false,"kind":4,"returnType":2,},
-      ],"init":"AppleSignIn_Init","kind":4,"order":[
+      ],"init":"","kind":4,"order":[
         {"name":"AppleSignIn_Init","path":"extensions/AppleSignIn/AppleSignIn.yy",},
         {"name":"AppleSignIn_AuthoriseUser","path":"extensions/AppleSignIn/AppleSignIn.yy",},
         {"name":"AppleSignIn_AddScope","path":"extensions/AppleSignIn/AppleSignIn.yy",},
         {"name":"AppleSignIn_ClearScopes","path":"extensions/AppleSignIn/AppleSignIn.yy",},
         {"name":"AppleSignIn_GetCredentialState","path":"extensions/AppleSignIn/AppleSignIn.yy",},
       ],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":false,},
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":2,"filename":"libAppleSignInMacLib.dylib","final":"","functions":[
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"AppleSignIn_Init","argCount":0,"args":[],"documentation":"","externalName":"AppleSignIn_Init_C","help":"AppleSignIn_Init()","hidden":true,"kind":4,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"AppleSignIn_AuthoriseUser","argCount":0,"args":[],"documentation":"","externalName":"AppleSignIn_AuthoriseUser_C","help":"AppleSignIn_AuthoriseUser()","hidden":false,"kind":4,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"AppleSignIn_AddScope","argCount":0,"args":[
+            1,
+          ],"documentation":"","externalName":"AppleSignIn_AddScope_C","help":"AppleSignIn_AddScope(scope)","hidden":false,"kind":4,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"AppleSignIn_ClearScopes","argCount":0,"args":[],"documentation":"","externalName":"AppleSignIn_ClearScopes_C","help":"AppleSignIn_ClearScopes()","hidden":false,"kind":4,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"AppleSignIn_GetCredentialState","argCount":0,"args":[
+            1,
+          ],"documentation":"","externalName":"AppleSignIn_GetCredentialState_C","help":"AppleSignIn_GetCredentialState(identitiy_token)","hidden":false,"kind":4,"returnType":2,},
+      ],"init":"","kind":1,"order":[],"origname":"","ProxyFiles":[],"uncompress":false,"usesRunnerInterface":false,},
   ],
   "gradleinject": "",
   "hasConvertedCodeInjection": true,
