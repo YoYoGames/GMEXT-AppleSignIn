@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Apple SignIn Demo/Scripts.yy",
+    "name": "Apple SignIn",
+    "path": "folders/Apple SignIn.yy",
   },
 }

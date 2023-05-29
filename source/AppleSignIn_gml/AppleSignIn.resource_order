@@ -13,6 +13,7 @@
     {"name":"Spr_YoYo_textbox","order":2,"path":"sprites/Spr_YoYo_textbox/Spr_YoYo_textbox.yy",},
     {"name":"ParseAppleCredentialResponse","order":1,"path":"scripts/ParseAppleCredentialResponse/ParseAppleCredentialResponse.yy",},
     {"name":"ParseAppleSignInResponse","order":2,"path":"scripts/ParseAppleSignInResponse/ParseAppleSignInResponse.yy",},
+    {"name":"AppleSignInCrossPlatformFunctions","order":2,"path":"scripts/AppleSignInCrossPlatformFunctions/AppleSignInCrossPlatformFunctions.yy",},
     {"name":"Font_YoYo_50","order":2,"path":"fonts/Font_YoYo_50/Font_YoYo_50.yy",},
     {"name":"Obj_YoYo_text","order":1,"path":"objects/Obj_YoYo_text/Obj_YoYo_text.yy",},
     {"name":"Spr_YoYo_button","order":1,"path":"sprites/Spr_YoYo_button/Spr_YoYo_button.yy",},

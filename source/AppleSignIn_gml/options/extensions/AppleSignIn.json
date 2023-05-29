@@ -1,9 +1,0 @@
-{
-  "resourceType": "GMExtensionConfigSet",
-  "configurables": null,
-  "extensionId": {
-    "name": "AppleSignIn",
-    "path": "extensions/AppleSignIn/AppleSignIn.yy"
-  },
-  "resourceVersion": "1.0"
-}

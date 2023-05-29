@@ -1,0 +1,16 @@
+[
+    {
+        "projectFile": "source/AppleSignIn_gml/AppleSignIn.yyp",
+        "extensionFile": "source/Firebase_gml/extensions/AppleSignIn/AppleSignIn.yy",
+        "packageid": "com.yoyogames.applesignin",
+        "packagename": "Apple Sign-In Ext",
+        "resources": {
+            "includedFolders": null,
+            "includedResources": null,
+            "excludedFolders": null,
+            "excludedResources": null
+        },
+        "format": "LTS22",
+        "version": "1.1.0"
+    }
+]

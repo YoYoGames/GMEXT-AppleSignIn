@@ -30,7 +30,7 @@
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"mac_applesignin_realuserstatus_unknown","hidden":false,"value":"5101",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"mac_applesignin_realuserstatus_unsupported","hidden":false,"value":"5100",},
       ],"copyToTargets":2,"filename":"libAppleSignInMacLib.dylib","final":"Mac_AppleSignIn_Final","functions":[
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"Mac_AppleSignIn_Init","argCount":0,"args":[],"documentation":"","externalName":"Mac_AppleSignIn_Init","help":"Mac_AppleSignIn_Init()","hidden":false,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"Mac_AppleSignIn_Init","argCount":0,"args":[],"documentation":"","externalName":"Mac_AppleSignIn_Init","help":"Mac_AppleSignIn_Init()","hidden":true,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"Mac_AppleSignIn_AuthoriseUser","argCount":0,"args":[],"documentation":"","externalName":"Mac_AppleSignIn_AuthoriseUser","help":"Mac_AppleSignIn_AuthoriseUser()","hidden":false,"kind":1,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"Mac_AppleSignIn_AddScope","argCount":0,"args":[
             1,
@@ -39,8 +39,8 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"Mac_AppleSignIn_GetCredentialState","argCount":0,"args":[
             1,
           ],"documentation":"","externalName":"Mac_AppleSignIn_GetCredentialState","help":"Mac_AppleSignIn_GetCredentialState(identitiy_token)","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"RegisterCallbacks","argCount":0,"args":[],"documentation":"","externalName":"RegisterCallbacks","help":"Glue function, not required to be called.","hidden":false,"kind":1,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"Mac_AppleSignIn_Final","argCount":0,"args":[],"documentation":"","externalName":"Mac_AppleSignIn_Final","help":"Mac_AppleSignIn_Final()","hidden":false,"kind":1,"returnType":1,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"RegisterCallbacks","argCount":0,"args":[],"documentation":"","externalName":"RegisterCallbacks","help":"Glue function, not required to be called.","hidden":true,"kind":1,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"Mac_AppleSignIn_Final","argCount":0,"args":[],"documentation":"","externalName":"Mac_AppleSignIn_Final","help":"Mac_AppleSignIn_Final()","hidden":true,"kind":1,"returnType":1,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"Mac_AppleSignIn_RegisterWindow","argCount":0,"args":[
             1,
           ],"documentation":"","externalName":"RegisterWindow","help":"Mac_AppleSignIn_RegisterWindow(window_handle())","hidden":false,"kind":1,"returnType":2,},
@@ -58,6 +58,8 @@
   "gradleinject": "",
   "hasConvertedCodeInjection": true,
   "helpfile": "",
+  "HTML5CodeInjection": "",
+  "html5Props": false,
   "IncludedResources": [],
   "installdir": "",
   "iosCocoaPodDependencies": "",

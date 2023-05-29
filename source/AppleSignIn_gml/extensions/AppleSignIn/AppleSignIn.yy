@@ -30,7 +30,7 @@
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"applesignin_realuserstatus_unknown","hidden":false,"value":"5001",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"applesignin_realuserstatus_unsupported","hidden":false,"value":"5000",},
       ],"copyToTargets":9007199254740996,"filename":"AppleSignIn.ext","final":"","functions":[
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"AppleSignIn_Init","argCount":0,"args":[],"documentation":"","externalName":"AppleSignIn_Init","help":"AppleSignIn_Init()","hidden":false,"kind":4,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"AppleSignIn_Init","argCount":0,"args":[],"documentation":"","externalName":"AppleSignIn_Init","help":"AppleSignIn_Init()","hidden":true,"kind":4,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"AppleSignIn_AuthoriseUser","argCount":0,"args":[],"documentation":"","externalName":"AppleSignIn_AuthoriseUser","help":"AppleSignIn_AuthoriseUser()","hidden":false,"kind":4,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"AppleSignIn_AddScope","argCount":0,"args":[
             1,
@@ -50,6 +50,8 @@
   "gradleinject": "",
   "hasConvertedCodeInjection": true,
   "helpfile": "",
+  "HTML5CodeInjection": "",
+  "html5Props": false,
   "IncludedResources": [],
   "installdir": "",
   "iosCocoaPodDependencies": "",
