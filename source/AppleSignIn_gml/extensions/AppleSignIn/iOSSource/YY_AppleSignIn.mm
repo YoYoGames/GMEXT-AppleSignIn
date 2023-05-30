@@ -31,6 +31,9 @@ extern "C" void dsMapAddString(int _dsMap, const char* _key, const char* _value)
 const int EVENT_OTHER_SOCIAL = 70;
 
 #if TARGET_OS_OSX
+
+NSWindow* g_window = NULL;
+
 extern "C" void PreGraphicsInitialisation(char* arg1)//Mac
 {
 
@@ -305,6 +308,49 @@ void CreateAsyncEventWithDSMap_comaptibility_(int dsMapIndex)
     }
     
     return 1.0;
+}
+
+YY_AppleSignIn *mac;
+
+///////////////////////////////////////////////////////////////////////////
+///
+///
+void /*double*/ AppleSignIn_Init_C(RValue& Result, CInstance* selfinst, CInstance* otherinst, int argc, RValue* arg)//
+{
+    mac = [YY_AppleSignIn new];
+    
+    Result.kind = VALUE_REAL;
+    Result.val = [mac AppleSignIn_Init];
+}
+
+
+void /*double*/ AppleSignIn_AuthoriseUser_C(RValue& Result, CInstance* selfinst, CInstance* otherinst, int argc, RValue* arg)//
+{
+    Result.kind = VALUE_REAL;
+    Result.val = [mac AppleSignIn_AuthoriseUser];
+}
+
+
+void /*double*/ AppleSignIn_AddScope_C(RValue& Result, CInstance* selfinst, CInstance* otherinst, int argc, RValue* arg)//: (NSString*)scope
+{
+    const char* scope = YYGetString(arg, 0);
+    
+    Result.kind = VALUE_REAL;
+    Result.val = [mac AppleSignIn_AddScope:@(scope)];
+}
+
+void /*double*/ AppleSignIn_ClearScopes_C(RValue& Result, CInstance* selfinst, CInstance* otherinst, int argc, RValue* arg)//
+{
+    Result.kind = VALUE_REAL;
+    Result.val = [mac AppleSignIn_ClearScopes];
+}
+
+void /*double*/ AppleSignIn_GetCredentialState_C(RValue& Result, CInstance* selfinst, CInstance* otherinst, int argc, RValue* arg)//:(NSString*) userId
+{
+    const char* userId = YYGetString(arg, 0);
+    
+    Result.kind = VALUE_REAL;
+    Result.val = [mac AppleSignIn_GetCredentialState:@(userId)];
 }
 
 @end

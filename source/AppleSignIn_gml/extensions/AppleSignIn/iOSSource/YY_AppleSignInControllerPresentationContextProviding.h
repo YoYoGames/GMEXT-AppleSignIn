@@ -5,6 +5,10 @@
 //  Created by David Clarke on 16/08/2019.
 //  Copyright © 2019 YoYo Games Ltd. All rights reserved.
 //
+
+#import "YY_AppleSignIn.h"
+
+
 #if !TARGET_OS_OSX
 #import <UIKit/UIKit.h>
 #endif

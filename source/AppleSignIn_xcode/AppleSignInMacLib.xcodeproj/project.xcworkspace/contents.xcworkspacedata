@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:AppleSignInMacLib.xcodeproj">
+      location = "self:/Users/yykaguvagames/Documents/GitHub/GMEXT-AppleIAP/source/AppleIAP_xcode/AppleSignInMacLib.xcodeproj">
    </FileRef>
 </Workspace>
