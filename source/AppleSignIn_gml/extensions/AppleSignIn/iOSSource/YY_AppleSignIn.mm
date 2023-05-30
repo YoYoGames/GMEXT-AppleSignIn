@@ -315,6 +315,7 @@ YY_AppleSignIn *mac;
 ///////////////////////////////////////////////////////////////////////////
 ///
 ///
+#if TARGET_OS_OSX
 void /*double*/ AppleSignIn_Init_C(RValue& Result, CInstance* selfinst, CInstance* otherinst, int argc, RValue* arg)//
 {
     mac = [YY_AppleSignIn new];
@@ -352,5 +353,6 @@ void /*double*/ AppleSignIn_GetCredentialState_C(RValue& Result, CInstance* self
     Result.kind = VALUE_REAL;
     Result.val = [mac AppleSignIn_GetCredentialState:@(userId)];
 }
+#endif
 
 @end
