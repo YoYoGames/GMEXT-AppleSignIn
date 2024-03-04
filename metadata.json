@@ -5,7 +5,7 @@
     "releaseTemplate": "templates/release_body.md",
     "extensionMetaData": [
         {
-            "extensionFile": "source/Firebase_gml/extensions/AppleSignIn/AppleSignIn.yy",
+            "extensionFile": "source/AppleSignIn_gml/extensions/AppleSignIn/AppleSignIn.yy",
             "packageId": "com.yoyogames.applesignin",
             "packageName": "Apple Sign-In Ext",
             "packageVersion": "1.1.0",
