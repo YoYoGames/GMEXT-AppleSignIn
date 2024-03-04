@@ -1,18 +1,1 @@
-{
-    "gitHubUrl": "https://github.com/YoYoGames/GMEXT-AppleSignIn",
-    "projectFile": "source/AppleSignIn_gml/AppleSignIn.yyp",
-    "projectVersion": "LTS22",
-    "releaseTemplate": "templates/release_body.md",
-    "extensionMetaData": [
-        {
-            "extensionFile": "source/AppleSignIn_gml/extensions/AppleSignIn/AppleSignIn.yy",
-            "packageId": "com.yoyogames.applesignin",
-            "packageName": "Apple Sign-In Ext",
-            "packageVersion": "1.1.0",
-            "packageFormat": "LTS22",
-            "includeFolders": null,
-            "includeResources": null,
-            "excludeResources": null
-        }
-    ]
-}
+{"gitHubUrl":"https://github.com/YoYoGames/GMEXT-AppleSignIn","projectFile":"source/AppleSignIn_gml/AppleSignIn.yyp","projectVersion":"LTS22","releaseTemplate":"templates/release_body.md","extensionMetaData":[{"extensionFile":"source/AppleSignIn_gml/extensions/AppleSignIn/AppleSignIn.yy","packageId":"com.yoyogames.applesignin","packageName":"Apple Sign-In Ext","packageVersion":"1.2.0","packageFormat":"LTS22","includeFolders":null,"includeResources":null,"excludeFolders":null,"excludeResources":null}]}

@@ -16,7 +16,7 @@
   "date": "2019-08-12T00:14:17",
   "description": "",
   "exportToGame": true,
-  "extensionVersion": "1.1.0",
+  "extensionVersion": "1.2.0",
   "files": [
     {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"applesignin_scope_fullname","hidden":false,"value":"\"fullname\"",},
