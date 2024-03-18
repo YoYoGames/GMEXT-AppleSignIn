@@ -6,7 +6,7 @@ switch(appleSignInState)
 {
 	case applesignin_state_authorized: text = "Authorized"; break
 	case applesignin_state_not_found: text = "Not Found"; break
-	case mac_applesignin_state_revoked: text = "Revoked"; break
+	case applesignin_state_revoked: text = "Revoked"; break
 }
 
 draw_set_font(Font_YoYo_20)

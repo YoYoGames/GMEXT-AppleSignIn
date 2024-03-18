@@ -18,7 +18,6 @@
     {"name":"Spr_YoYo_button","order":1,"path":"sprites/Spr_YoYo_button/Spr_YoYo_button.yy",},
     {"name":"Room_AppleSignIn","order":4,"path":"rooms/Room_AppleSignIn/Room_AppleSignIn.yy",},
     {"name":"Font_YoYo_30","order":1,"path":"fonts/Font_YoYo_30/Font_YoYo_30.yy",},
-    {"name":"AppleSignInMac","order":1,"path":"extensions/AppleSignInMac/AppleSignInMac.yy",},
     {"name":"Obj_YoYo_textbox","order":2,"path":"objects/Obj_YoYo_textbox/Obj_YoYo_textbox.yy",},
   ],
 }

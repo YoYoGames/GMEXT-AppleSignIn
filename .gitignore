@@ -68,3 +68,7 @@ fastlane/test_output
 iOSInjectionProject/
 
 *.provisionprofile
+
+source/AppleSignIn_gml/options/extensions/
+
+output/
