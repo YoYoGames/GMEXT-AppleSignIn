@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "ParseAppleSignInResponse",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Scripts",
-    "path": "folders/Apple SignIn Demo/Scripts.yy",
+  "$GMScript":"v1",
+  "%Name":"ParseAppleSignInResponse",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ParseAppleSignInResponse",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Apple SignIn Demo/Scripts.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

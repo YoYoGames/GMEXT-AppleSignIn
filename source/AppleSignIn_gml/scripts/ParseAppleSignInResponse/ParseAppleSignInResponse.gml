@@ -16,9 +16,8 @@ function ParseAppleSignInResponse(appleSignInResponse)
 		var realUser = jsonMap[? "realUserStatus"];
 			
 		show_debug_message("User: " + string(userId) + " | " + string(identityToken) + " | " + string(authCode) + " | " + string(realUser) );
-			
-		appleSignInState = applesignin_state_authorized;
 		
+		appleSignInState = applesignin_state_authorized;
 	}
 	else
 	{
