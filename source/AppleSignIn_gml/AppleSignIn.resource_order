@@ -12,9 +12,11 @@
   "ResourceOrderSettings":[
     {"name":"Font_YoYo_30","order":1,"path":"fonts/Font_YoYo_30/Font_YoYo_30.yy",},
     {"name":"Font_YoYo_50","order":2,"path":"fonts/Font_YoYo_50/Font_YoYo_50.yy",},
+    {"name":"obj_apple_signin_rest","order":6,"path":"objects/obj_apple_signin_rest/obj_apple_signin_rest.yy",},
     {"name":"Obj_YoYo_text","order":1,"path":"objects/Obj_YoYo_text/Obj_YoYo_text.yy",},
     {"name":"Obj_YoYo_textbox","order":2,"path":"objects/Obj_YoYo_textbox/Obj_YoYo_textbox.yy",},
     {"name":"Room_AppleSignIn","order":4,"path":"rooms/Room_AppleSignIn/Room_AppleSignIn.yy",},
+    {"name":"apple_signin_functions","order":1,"path":"scripts/apple_signin_functions/apple_signin_functions.yy",},
     {"name":"ParseAppleCredentialResponse","order":1,"path":"scripts/ParseAppleCredentialResponse/ParseAppleCredentialResponse.yy",},
     {"name":"ParseAppleSignInResponse","order":2,"path":"scripts/ParseAppleSignInResponse/ParseAppleSignInResponse.yy",},
     {"name":"Spr_YoYo_button","order":1,"path":"sprites/Spr_YoYo_button/Spr_YoYo_button.yy",},
