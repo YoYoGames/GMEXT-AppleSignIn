@@ -19,13 +19,11 @@
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/YoYo Extensions Assets/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/YoYo Extensions Assets/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "IncludedFiles":[
-    {"$GMIncludedFile":"","%Name":"5f9d9c8d-f7bb-499f-8638-136a673efab9.provisionprofile","CopyToMask":-1,"filePath":"datafiles","name":"5f9d9c8d-f7bb-499f-8638-136a673efab9.provisionprofile","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-  ],
+  "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1100.0.688",
+    "IDEVersion":"2024.8.1.171",
   },
   "name":"AppleSignIn",
   "resources":[
@@ -33,7 +31,8 @@
     {"id":{"name":"Font_YoYo_20","path":"fonts/Font_YoYo_20/Font_YoYo_20.yy",},},
     {"id":{"name":"Font_YoYo_30","path":"fonts/Font_YoYo_30/Font_YoYo_30.yy",},},
     {"id":{"name":"Font_YoYo_50","path":"fonts/Font_YoYo_50/Font_YoYo_50.yy",},},
-    {"id":{"name":"obj_apple_signin_rest","path":"objects/obj_apple_signin_rest/obj_apple_signin_rest.yy",},},
+    {"id":{"name":"Obj_AppleSignIn_Oauth_Http","path":"objects/Obj_AppleSignIn_Oauth_Http/Obj_AppleSignIn_Oauth_Http.yy",},},
+    {"id":{"name":"Obj_AppleSignIn_Redirection_Listener","path":"objects/Obj_AppleSignIn_Redirection_Listener/Obj_AppleSignIn_Redirection_Listener.yy",},},
     {"id":{"name":"Obj_AppleSignIn","path":"objects/Obj_AppleSignIn/Obj_AppleSignIn.yy",},},
     {"id":{"name":"Obj_YoYo_button","path":"objects/Obj_YoYo_button/Obj_YoYo_button.yy",},},
     {"id":{"name":"Obj_YoYo_text","path":"objects/Obj_YoYo_text/Obj_YoYo_text.yy",},},

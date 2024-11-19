@@ -1,22 +1,9 @@
-/// @description Insert description here
-// You can write your code in this editor
 
-search_url = "";
+#macro APPLESIGNIN_OAUTH_ENDPOINT "https://accounts.google.com/o/oauth2/v2/auth"
 
-private_key = @"";
-
-function create_code(digits = 14, characters = "123456789") {
-	var str = ""
-	repeat(digits)
-		str += string_char_at(characters,irandom(string_length(characters)))
-	
-	return str
-}
-
-
-client_id = "";
-redirect_uri = "";
-state = create_code();
+client_id = extension_get_option_value("AppleSignIn", "REDIRECTION ClientID");
+redirect_uri = extension_get_option_value("AppleSignIn", "REDIRECTION Uri");
+//state = create_code();
 scope = "name email";
 response_type = "code";
 response_mode = "form_post";
@@ -30,9 +17,9 @@ var _auth_url = "https://appleid.apple.com/auth/authorize"
     + "&scope=" + __apple_signin_url_encode(scope)
     + "&state=" + __apple_signin_url_encode(state)
     + "&nonce=" + __apple_signin_url_encode(nonce)
-	
+
 search_request = undefined;
 	
 url_open(_auth_url);
 
-alarm[0] = room_speed;
+

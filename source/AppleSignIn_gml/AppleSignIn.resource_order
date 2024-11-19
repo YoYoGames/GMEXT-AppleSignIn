@@ -12,7 +12,8 @@
   "ResourceOrderSettings":[
     {"name":"Font_YoYo_30","order":1,"path":"fonts/Font_YoYo_30/Font_YoYo_30.yy",},
     {"name":"Font_YoYo_50","order":2,"path":"fonts/Font_YoYo_50/Font_YoYo_50.yy",},
-    {"name":"obj_apple_signin_rest","order":6,"path":"objects/obj_apple_signin_rest/obj_apple_signin_rest.yy",},
+    {"name":"Obj_AppleSignIn_Oauth_Http","order":2,"path":"objects/Obj_AppleSignIn_Oauth_Http/Obj_AppleSignIn_Oauth_Http.yy",},
+    {"name":"Obj_AppleSignIn_Redirection_Listener","order":1,"path":"objects/Obj_AppleSignIn_Redirection_Listener/Obj_AppleSignIn_Redirection_Listener.yy",},
     {"name":"Obj_YoYo_text","order":1,"path":"objects/Obj_YoYo_text/Obj_YoYo_text.yy",},
     {"name":"Obj_YoYo_textbox","order":2,"path":"objects/Obj_YoYo_textbox/Obj_YoYo_textbox.yy",},
     {"name":"Room_AppleSignIn","order":4,"path":"rooms/Room_AppleSignIn/Room_AppleSignIn.yy",},
