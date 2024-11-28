@@ -213,9 +213,19 @@ void CreateAsyncEventWithDSMap_comaptibility_apple_sign_in(int dsMapIndex)
 	#endif
     {
         ASAuthorizationAppleIDRequest* request = [appleIdProvider createRequest];
+        if (request == nil) {
+            NSLog(@"Error: The authorization request is nil.");
+            return 0.0;
+        }
+
+        ASAuthorizationController* authorizationController = [[ASAuthorizationController alloc] initWithAuthorizationRequests:@[request]];
+        if (authorizationController == nil) {
+            NSLog(@"Error: Authorization controller is nil.");
+            return 0.0;
+        }
+
         request.requestedScopes = requestedScopes;
   
-        ASAuthorizationController* authorizationController = [[ASAuthorizationController alloc] initWithAuthorizationRequests:@[request]];
         authDelegate = [[YY_AppleSignInDelegate alloc] init];
         
         authorizationController.delegate = authDelegate;

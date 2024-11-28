@@ -11,7 +11,7 @@
   "androidsourcedir":"",
   "author":"",
   "classname":"YY_AppleSignIn",
-  "copyToTargets":3035426170322551022,
+  "copyToTargets":9007199254740998,
   "description":"",
   "exportToGame":true,
   "extensionVersion":"1.2.0",
@@ -27,7 +27,7 @@
         {"$GMExtensionConstant":"","%Name":"applesignin_realuserstatus_likelyreal","hidden":false,"name":"applesignin_realuserstatus_likelyreal","resourceType":"GMExtensionConstant","resourceVersion":"2.0","value":"5002",},
         {"$GMExtensionConstant":"","%Name":"applesignin_realuserstatus_unknown","hidden":false,"name":"applesignin_realuserstatus_unknown","resourceType":"GMExtensionConstant","resourceVersion":"2.0","value":"5001",},
         {"$GMExtensionConstant":"","%Name":"applesignin_realuserstatus_unsupported","hidden":false,"name":"applesignin_realuserstatus_unsupported","resourceType":"GMExtensionConstant","resourceVersion":"2.0","value":"5000",},
-      ],"copyToTargets":3035426153142681838,"filename":"AppleSignIn.ext","final":"","functions":[
+      ],"copyToTargets":9007199254740998,"filename":"AppleSignIn.ext","final":"","functions":[
         {"$GMExtensionFunction":"","%Name":"AppleSignIn_Init","argCount":0,"args":[],"documentation":"","externalName":"AppleSignIn_Init","help":"AppleSignIn_Init()","hidden":true,"kind":4,"name":"AppleSignIn_Init","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"AppleSignIn_AuthoriseUser","argCount":0,"args":[],"documentation":"","externalName":"AppleSignIn_AuthoriseUser","help":"AppleSignIn_AuthoriseUser()","hidden":false,"kind":4,"name":"AppleSignIn_AuthoriseUser","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"AppleSignIn_AddScope","argCount":0,"args":[1,],"documentation":"","externalName":"AppleSignIn_AddScope","help":"AppleSignIn_AddScope(scope)","hidden":false,"kind":4,"name":"AppleSignIn_AddScope","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
