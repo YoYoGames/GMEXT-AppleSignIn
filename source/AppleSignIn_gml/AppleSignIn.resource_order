@@ -1,8 +1,7 @@
 {
   "FolderOrderSettings":[
     {"name":"Apple SignIn Demo","order":3,"path":"folders/Apple SignIn Demo.yy",},
-    {"name":"Objects","order":2,"path":"folders/Apple SignIn Demo/Objects.yy",},
-    {"name":"Scripts","order":3,"path":"folders/Apple SignIn Demo/Scripts.yy",},
+    {"name":"Scripts","order":1,"path":"folders/Apple SignIn Demo/Scripts.yy",},
     {"name":"Apple SignIn","order":5,"path":"folders/Apple SignIn.yy",},
     {"name":"YoYo Extensions Assets","order":4,"path":"folders/YoYo Extensions Assets.yy",},
     {"name":"Font","order":1,"path":"folders/YoYo Extensions Assets/Font.yy",},
@@ -10,14 +9,14 @@
     {"name":"Sprites","order":3,"path":"folders/YoYo Extensions Assets/Sprites.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"AppleSignIn","order":1,"path":"extensions/AppleSignIn/AppleSignIn.yy",},
     {"name":"Font_YoYo_30","order":1,"path":"fonts/Font_YoYo_30/Font_YoYo_30.yy",},
     {"name":"Font_YoYo_50","order":2,"path":"fonts/Font_YoYo_50/Font_YoYo_50.yy",},
     {"name":"Obj_AppleSignIn_Oauth_Http","order":2,"path":"objects/Obj_AppleSignIn_Oauth_Http/Obj_AppleSignIn_Oauth_Http.yy",},
-    {"name":"Obj_AppleSignIn_Redirection_Listener","order":1,"path":"objects/Obj_AppleSignIn_Redirection_Listener/Obj_AppleSignIn_Redirection_Listener.yy",},
+    {"name":"Obj_AppleSignIn_OAuth","order":3,"path":"objects/Obj_AppleSignIn_OAuth/Obj_AppleSignIn_OAuth.yy",},
     {"name":"Obj_YoYo_text","order":1,"path":"objects/Obj_YoYo_text/Obj_YoYo_text.yy",},
     {"name":"Obj_YoYo_textbox","order":2,"path":"objects/Obj_YoYo_textbox/Obj_YoYo_textbox.yy",},
-    {"name":"Room_AppleSignIn","order":4,"path":"rooms/Room_AppleSignIn/Room_AppleSignIn.yy",},
-    {"name":"apple_signin_functions","order":1,"path":"scripts/apple_signin_functions/apple_signin_functions.yy",},
+    {"name":"Room_AppleSignIn","order":2,"path":"rooms/Room_AppleSignIn/Room_AppleSignIn.yy",},
     {"name":"ParseAppleCredentialResponse","order":1,"path":"scripts/ParseAppleCredentialResponse/ParseAppleCredentialResponse.yy",},
     {"name":"ParseAppleSignInResponse","order":2,"path":"scripts/ParseAppleSignInResponse/ParseAppleSignInResponse.yy",},
     {"name":"Spr_YoYo_button","order":1,"path":"sprites/Spr_YoYo_button/Spr_YoYo_button.yy",},

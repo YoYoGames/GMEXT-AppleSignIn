@@ -32,7 +32,7 @@
     {"id":{"name":"Font_YoYo_30","path":"fonts/Font_YoYo_30/Font_YoYo_30.yy",},},
     {"id":{"name":"Font_YoYo_50","path":"fonts/Font_YoYo_50/Font_YoYo_50.yy",},},
     {"id":{"name":"Obj_AppleSignIn_Oauth_Http","path":"objects/Obj_AppleSignIn_Oauth_Http/Obj_AppleSignIn_Oauth_Http.yy",},},
-    {"id":{"name":"Obj_AppleSignIn_Redirection_Listener","path":"objects/Obj_AppleSignIn_Redirection_Listener/Obj_AppleSignIn_Redirection_Listener.yy",},},
+    {"id":{"name":"Obj_AppleSignIn_OAuth","path":"objects/Obj_AppleSignIn_OAuth/Obj_AppleSignIn_OAuth.yy",},},
     {"id":{"name":"Obj_AppleSignIn","path":"objects/Obj_AppleSignIn/Obj_AppleSignIn.yy",},},
     {"id":{"name":"Obj_YoYo_button","path":"objects/Obj_YoYo_button/Obj_YoYo_button.yy",},},
     {"id":{"name":"Obj_YoYo_text","path":"objects/Obj_YoYo_text/Obj_YoYo_text.yy",},},
