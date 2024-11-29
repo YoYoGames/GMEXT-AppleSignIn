@@ -21,7 +21,7 @@
 
 @end
 
-extern int CreateDsMap_comaptibility_();
-extern void DsMapAddString_comaptibility_(int dsMapIndex, const char* _key, const char* _value);
-extern void DsMapAddDouble_comaptibility_(int dsMapIndex, const char* _key, double _value);
-extern void CreateAsyncEventWithDSMap_comaptibility_(int dsMapIndex);
+extern int CreateDsMap_comaptibility_apple_sign_in();
+extern void DsMapAddString_comaptibility_apple_sign_in(int dsMapIndex, const char* _key, const char* _value);
+extern void DsMapAddDouble_comaptibility_apple_sign_in(int dsMapIndex, const char* _key, double _value);
+extern void CreateAsyncEventWithDSMap_comaptibility_apple_sign_in(int dsMapIndex);

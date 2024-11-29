@@ -75,10 +75,10 @@
     char jResponse[20];
     sprintf(jResponse, "response_json");
     
-    int dsMapIndex = CreateDsMap_comaptibility_();
-    DsMapAddDouble_comaptibility_(dsMapIndex, jId, applesignin_signin_response);
-    DsMapAddString_comaptibility_(dsMapIndex, jResponse, const_cast<char*>([jsonStr UTF8String]));
-    CreateAsyncEventWithDSMap_comaptibility_(dsMapIndex);
+    int dsMapIndex = CreateDsMap_comaptibility_apple_sign_in();
+    DsMapAddDouble_comaptibility_apple_sign_in(dsMapIndex, jId, applesignin_signin_response);
+    DsMapAddString_comaptibility_apple_sign_in(dsMapIndex, jResponse, const_cast<char*>([jsonStr UTF8String]));
+    CreateAsyncEventWithDSMap_comaptibility_apple_sign_in(dsMapIndex);
     
     [results release];
     [jsonStr release];
@@ -108,10 +108,10 @@
     char jResponse[20];
     sprintf(jResponse, "response_json");
     
-    int dsMapIndex = CreateDsMap_comaptibility_();
-    DsMapAddDouble_comaptibility_(dsMapIndex, jId, applesignin_signin_response);
-    DsMapAddString_comaptibility_(dsMapIndex, jResponse, const_cast<char*>([jsonStr UTF8String]));
-    CreateAsyncEventWithDSMap_comaptibility_(dsMapIndex);
+    int dsMapIndex = CreateDsMap_comaptibility_apple_sign_in();
+    DsMapAddDouble_comaptibility_apple_sign_in(dsMapIndex, jId, applesignin_signin_response);
+    DsMapAddString_comaptibility_apple_sign_in(dsMapIndex, jResponse, const_cast<char*>([jsonStr UTF8String]));
+    CreateAsyncEventWithDSMap_comaptibility_apple_sign_in(dsMapIndex);
     
     [results release];
     [jsonStr release];

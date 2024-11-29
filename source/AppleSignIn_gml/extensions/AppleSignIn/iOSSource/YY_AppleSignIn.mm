@@ -65,7 +65,7 @@ YYEXPORT void YYExtensionInitialise(const struct YYRunnerInterface* _pFunctions,
 	#endif
 }
 
-int CreateDsMap_comaptibility_()
+int CreateDsMap_comaptibility_apple_sign_in()
 {
     #if TARGET_OS_OSX
     return CreateDsMap(0,0);
@@ -74,7 +74,7 @@ int CreateDsMap_comaptibility_()
     #endif
 }
 
-void DsMapAddString_comaptibility_(int dsMapIndex, const char* _key, const char* _value)
+void DsMapAddString_comaptibility_apple_sign_in(int dsMapIndex, const char* _key, const char* _value)
 {
     #if TARGET_OS_OSX
     DsMapAddString(dsMapIndex, _key, _value);
@@ -83,7 +83,7 @@ void DsMapAddString_comaptibility_(int dsMapIndex, const char* _key, const char*
     #endif
 }
 
-void DsMapAddDouble_comaptibility_(int dsMapIndex, const char* _key, double _value)
+void DsMapAddDouble_comaptibility_apple_sign_in(int dsMapIndex, const char* _key, double _value)
 {
     #if TARGET_OS_OSX
     DsMapAddDouble(dsMapIndex, _key, _value);
@@ -92,7 +92,7 @@ void DsMapAddDouble_comaptibility_(int dsMapIndex, const char* _key, double _val
     #endif
 }
 
-void CreateAsyncEventWithDSMap_comaptibility_(int dsMapIndex)
+void CreateAsyncEventWithDSMap_comaptibility_apple_sign_in(int dsMapIndex)
 {
     #if TARGET_OS_OSX
     CreateAsyncEventWithDSMap(dsMapIndex,EVENT_OTHER_SOCIAL);
@@ -188,10 +188,10 @@ void CreateAsyncEventWithDSMap_comaptibility_(int dsMapIndex)
             char jResponse[20];
             sprintf(jResponse, "response_json");
             
-            int dsMapIndex = CreateDsMap_comaptibility_();
-            DsMapAddDouble_comaptibility_(dsMapIndex, jId, applesignin_credential_response);
-            DsMapAddString_comaptibility_(dsMapIndex, jResponse, const_cast<char*>([jsonStr UTF8String]));
-            CreateAsyncEventWithDSMap_comaptibility_(dsMapIndex);
+            int dsMapIndex = CreateDsMap_comaptibility_apple_sign_in();
+            DsMapAddDouble_comaptibility_apple_sign_in(dsMapIndex, jId, applesignin_credential_response);
+            DsMapAddString_comaptibility_apple_sign_in(dsMapIndex, jResponse, const_cast<char*>([jsonStr UTF8String]));
+            CreateAsyncEventWithDSMap_comaptibility_apple_sign_in(dsMapIndex);
             
             [results release];
             [jsonStr release];
@@ -213,9 +213,19 @@ void CreateAsyncEventWithDSMap_comaptibility_(int dsMapIndex)
 	#endif
     {
         ASAuthorizationAppleIDRequest* request = [appleIdProvider createRequest];
+        if (request == nil) {
+            NSLog(@"Error: The authorization request is nil.");
+            return 0.0;
+        }
+
+        ASAuthorizationController* authorizationController = [[ASAuthorizationController alloc] initWithAuthorizationRequests:@[request]];
+        if (authorizationController == nil) {
+            NSLog(@"Error: Authorization controller is nil.");
+            return 0.0;
+        }
+
         request.requestedScopes = requestedScopes;
   
-        ASAuthorizationController* authorizationController = [[ASAuthorizationController alloc] initWithAuthorizationRequests:@[request]];
         authDelegate = [[YY_AppleSignInDelegate alloc] init];
         
         authorizationController.delegate = authDelegate;
@@ -297,10 +307,10 @@ void CreateAsyncEventWithDSMap_comaptibility_(int dsMapIndex)
             char jResponse[20];
             sprintf(jResponse, "response_json");
             
-            int dsMapIndex = CreateDsMap_comaptibility_();
-            DsMapAddDouble_comaptibility_(dsMapIndex, jId, applesignin_credential_response);
-            DsMapAddString_comaptibility_(dsMapIndex, jResponse, const_cast<char*>([jsonStr UTF8String]));
-            CreateAsyncEventWithDSMap_comaptibility_(dsMapIndex);
+            int dsMapIndex = CreateDsMap_comaptibility_apple_sign_in();
+            DsMapAddDouble_comaptibility_apple_sign_in(dsMapIndex, jId, applesignin_credential_response);
+            DsMapAddString_comaptibility_apple_sign_in(dsMapIndex, jResponse, const_cast<char*>([jsonStr UTF8String]));
+            CreateAsyncEventWithDSMap_comaptibility_apple_sign_in(dsMapIndex);
             
             [results release];
             [jsonStr release];
