@@ -72,3 +72,5 @@ iOSInjectionProject/
 source/AppleSignIn_gml/options/extensions/
 
 output/
+
+source/AppleSignIn_gml/datafiles/.env

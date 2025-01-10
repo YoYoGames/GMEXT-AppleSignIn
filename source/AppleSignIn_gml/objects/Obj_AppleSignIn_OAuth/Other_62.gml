@@ -1,17 +1,26 @@
 
-if(async_load[?"status"] != 0)
-	exit
+if (async_load[?"status"] != 0)
+	exit;
 
-if(search_request == async_load[?"id"])
+if (search_request == async_load[?"id"])
 {
-	if(async_load[? "result"] == "NO_EXISTS")
-	{
-		alarm[0] = room_speed
-		exit
-	}
-	
+	// This is always a json encoded string
 	var _data = json_parse(async_load[?"result"])
-	show_debug_message(_data); // this will be the token that was already exchanged!!!
+	
+	if (struct_exists(_data, "errorCode"))
+	{
+		if (--search_tries > 0) {
+			alarm[0] = game_get_speed(gamespeed_fps);
+		}
+		else {
+			var _map = ds_map_create();
+			_map[? "id"] = applesignin_signin_response;
+			_map[? "success"] = false;
+			event_perform_async(ev_async_social, _map);
+			instance_destroy();
+		}
+		return;
+	}
 	
 	var map = ds_map_create()
 	
@@ -26,10 +35,5 @@ if(search_request == async_load[?"id"])
 	_map[? "response_json"] = json_stringify(_struct)
 	_map[? "success"] = true;
 	event_perform_async(ev_async_social, _map);
-	
 	instance_destroy();
 }
-//else
-//	show_debug_message("Apple Sign In Failed");
-
-

@@ -1,7 +1,11 @@
 
-function apple_signin_functions(){
-
+/// Prevents the execution of this script as function and throws an error.
+/// @ignore
+function apple_signin_api(){
+	throw _GMFUNCTION_ + " :: script cannnot be call as a function";
 }
+
+#region Internal
 
 /// @desc Computes the SHA-256 hash of a given buffer using the SHA-256 algorithm.
 /// This function implements the full SHA-256 algorithm, processes the input buffer, and returns the hash value either
@@ -173,6 +177,27 @@ function __apple_signin_buffer_sha256(_out_buffer, _in_buffer, _in_offset = 0, _
 	buffer_seek(_out_buffer, buffer_seek_start, 0);	
 }
 
+/// Encodes a string for use in a URL by replacing reserved characters with their percent-encoded equivalents.
+///
+/// This function performs URL encoding for a given input string (_orig), ensuring that reserved characters
+/// are encoded using their hexadecimal representation, while unreserved characters remain unchanged.
+/// 
+/// 1. Creates a reusable output buffer for constructing the encoded string.
+///
+/// 2. Iterates through each character in the input string.
+///
+/// 3. Writes unreserved characters directly to the buffer.
+///
+/// 4. For reserved or special characters, calculates the percent-encoded representation using bitwise operations.
+///
+/// 5. Writes the encoded representation into the buffer.
+///
+/// 6. Appends a null terminator to the buffer and returns the constructed URL-encoded string.
+///
+/// This function uses a static buffer for performance optimization.
+///
+/// @param {string} _orig The input string to encode for URL usage (ASCII only)
+/// @returns {string} The URL-encoded version of the input string.
 /// @ignore
 function __apple_signin_url_encode(_orig) {
     
@@ -210,8 +235,11 @@ function __apple_signin_url_encode(_orig) {
     return buffer_peek(_output_buffer, 0, buffer_string);
 }
 
+/// Generates a random nonce code with the specified number of digits using the provided allowed characters.
+/// @param {Real} _length The number of characters to generate for the nonce string. Defaults to 32.
+/// @returns {String} A randomly generated nonce to be used by apple oauth process.
 /// @ignore
-function __apple_signin_generate_code_verifier(_length) {
+function __apple_signin_generate_code_verifier(_length = 32) {
 	
 	static _output_buffer = buffer_create(1, buffer_grow, 1);
 	
@@ -227,6 +255,25 @@ function __apple_signin_generate_code_verifier(_length) {
 	buffer_write(_output_buffer, buffer_u8, 0);
 	
     return buffer_peek(_output_buffer, 0, buffer_string);
+}
+
+/// Generates a SHA256 hash of the input string.
+/// @param {String} _verifier The string of characters to hash.
+/// @returns {String} The SHA256 hash of the input string.
+/// @ignore
+function __apple_signin_generate_code_challenge(_verifier) {
+    var _buffer = buffer_create(1, buffer_grow, 1);
+	buffer_write(_buffer, buffer_string, _verifier);
+	
+	var _buffer_sha256 = buffer_create(1, buffer_grow, 1);
+	__apple_signin_buffer_sha256(_buffer_sha256, _buffer, 0, string_length(_verifier));
+	
+    var _hex_string = __apple_signin_byte_buffer_to_hex_string(_buffer_sha256);
+	
+	buffer_delete(_buffer);
+	buffer_delete(_buffer_sha256);
+	
+	return _hex_string;
 }
 
 /// @desc Encodes a given buffer into a Base64Url string.
@@ -279,19 +326,105 @@ function __apple_signin_byte_buffer_to_hex_string(_buffer, _offset = 0, _length 
     return _hexa_string;
 }
 
+/// Generates a random state string with the specified number of digits using the provided allowed characters.
+/// 
+/// This function creates a random string of a specified length (_digits) using characters from a given set
+/// (_allowed_chars). The generated string is commonly used as a state parameter in OAuth processes for
+/// additional security.
+/// 
+/// 1. Validates the allowed characters string for ASCII compatibility and non-empty value.
+/// 
+/// 2. Creates buffers for generating the random state string.
+/// 
+/// 3. Randomly selects characters from the allowed characters set to populate the state string.
+/// 
+/// 4. Returns the generated state string and cleans up buffers used during the process.
+/// 
+/// @param {Real} _digits The number of characters to generate for the state string. Defaults to 32.
+/// @param {String} _allowed_chars The set of allowed characters to use for generating the state string. Defaults to numeric digits.
+/// @returns {String} A randomly generated state string or an empty string if the input is invalid.
 /// @ignore
-function __apple_signin_generate_code_challenge(_verifier) {
-    var _buffer = buffer_create(1, buffer_grow, 1);
-	buffer_write(_buffer, buffer_string, _verifier);
+function __apple_signin_state_create(_digits = 32, _allowed_chars = "0123456789")
+{
+	var _length = string_length(_allowed_chars);
+	if (_length != string_byte_length(_allowed_chars)) {
+		show_debug_message(_GMFUNCTION_ + " :: only ASCII characters are allowed.");
+		return "";
+	}
 	
-	var _buffer_sha256 = buffer_create(1, buffer_grow, 1);
-	__apple_signin_buffer_sha256(_buffer_sha256, _buffer, 0, string_length(_verifier));
+	if (_length == 0) {
+		show_debug_message(_GMFUNCTION_ + " :: allowed characters is an empty string");
+		return "";
+	}
 	
-    var _hex_string = __apple_signin_byte_buffer_to_hex_string(_buffer_sha256);
+	var _out_buff = buffer_create(_digits, buffer_fixed, 1);
+	var _input_buff = buffer_create(1, buffer_grow, 1);
 	
-	buffer_delete(_buffer);
-	buffer_delete(_buffer_sha256);
+	buffer_write(_input_buff, buffer_text, _allowed_chars); // don't write ending byte
 	
-	return _hex_string;
+	var _input_size = buffer_tell(_input_buff);
+	repeat(_digits) {
+		buffer_write(_out_buff, buffer_u8, buffer_peek(_input_buff, irandom(_input_size - 1), buffer_u8));
+	}
+	
+	var _code = buffer_peek(_out_buff, 0, buffer_string);
+	buffer_delete(_out_buff);
+	buffer_delete(_input_buff);
+	
+	return _code;
+}
+
+#endregion
+
+/// @desc Triggers the OAuth process for logging in with an Apple account.
+/// 
+/// This function constructs the Apple OAuth URL with the provided state parameter,
+/// the client ID, and the redirect URI. It opens the URL to initiate the OAuth process
+/// and triggers an asynchronous event to signal the start of the login flow.
+/// 
+/// 1. Retrieves the client ID and redirect URI from the extension's configuration options.
+/// 
+/// 2. Constructs the Apple OAuth URL using the client ID, redirect URI, and state parameter.
+/// 
+/// 3. Opens the constructed URL to start the OAuth process.
+/// 
+/// 4. Creates an asynchronous event payload with OAuth initialization details and triggers the event.
+/// 
+/// @param {String} _state A unique state string used for security and validation during the OAuth process.
+/// @param {String} _scope The scopes that will be requested when performing the OAuth authorization. Defaults to 'name email'.
+function apple_signin_login_oauth(_state, _scopes = "name email") {
+	#macro APPLESIGNIN_OAUTH_ENDPOINT "https://appleid.apple.com/auth/authorize"
+
+	var _client_id = extension_get_option_value("AppleSignIn", "oauthClientId");
+	var _redirect_uri = extension_get_option_value("AppleSignIn", "oauthRedirectUrl");
+
+	var _response_type = "code";
+	var _response_mode = "form_post";
+	
+	// Create nonce and get its SHA256
+	var _nonce = __apple_signin_generate_code_verifier(128);
+	var _nonce_sha256 = __apple_signin_generate_code_challenge(_nonce);
+
+	var _auth_url = APPLESIGNIN_OAUTH_ENDPOINT
+		    + "?client_id=" + string(_client_id)
+		    + "&redirect_uri=" + __apple_signin_url_encode(_redirect_uri)
+		    + "&response_type=" + __apple_signin_url_encode(_response_type)
+		    + "&response_mode=" + __apple_signin_url_encode(_response_mode)
+		    + "&scope=" + __apple_signin_url_encode(_scopes)
+		    + "&state=" + __apple_signin_url_encode(_state)
+		    + "&nonce=" + __apple_signin_url_encode(_nonce_sha256)
+
+	// This will be the OAuth initialization
+	url_open(_auth_url);
+
+	// Trigger async event which marks the moment of oauth init
+	var _async_load = ds_map_create();
+	_async_load[? "type"] = "apple_signin_login_oauth";
+	_async_load[? "redirect_uri"] = _redirect_uri;
+	_async_load[? "client_id"] = _client_id;
+	_async_load[? "nonce"] = _nonce;
+	_async_load[? "state"] = _state;
+	
+	event_perform_async(ev_async_social, _async_load);
 }
 

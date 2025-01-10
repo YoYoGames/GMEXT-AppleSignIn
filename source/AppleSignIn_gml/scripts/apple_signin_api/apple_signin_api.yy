@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"apple_signin_functions",
+  "%Name":"apple_signin_api",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"apple_signin_functions",
+  "name":"apple_signin_api",
   "parent":{
     "name":"Apple SignIn",
     "path":"folders/Apple SignIn.yy",
