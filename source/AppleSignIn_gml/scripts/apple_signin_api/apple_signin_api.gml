@@ -391,8 +391,8 @@ function __apple_signin_state_create(_digits = 32, _allowed_chars = "0123456789"
 /// 4. Creates an asynchronous event payload with OAuth initialization details and triggers the event.
 /// 
 /// @param {String} _state A unique state string used for security and validation during the OAuth process.
-/// @param {String} _scope The scopes that will be requested when performing the OAuth authorization. Defaults to 'name email'.
-function apple_signin_login_oauth(_state, _scopes = "name email") {
+/// @param {String} _scopes The scopes that will be requested when performing the OAuth authorization. Defaults to 'name email'.
+function AppleSignIn_LoginOAuth(_state, _scopes = "name email") {
 	#macro APPLESIGNIN_OAUTH_ENDPOINT "https://appleid.apple.com/auth/authorize"
 
 	var _client_id = extension_get_option_value("AppleSignIn", "oauthClientId");

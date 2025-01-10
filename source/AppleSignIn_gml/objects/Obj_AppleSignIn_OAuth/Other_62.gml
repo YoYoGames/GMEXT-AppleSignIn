@@ -4,8 +4,16 @@ if (async_load[?"status"] != 0)
 
 if (search_request == async_load[?"id"])
 {
-	// This is always a json encoded string
-	var _data = json_parse(async_load[?"result"])
+	var _data;
+	try {
+		// This should always a json encoded string unless the
+		// server couldn't be reached by some reason.
+		_data = json_parse(async_load[? "result"])
+	}
+	catch (_error) {
+		_data = { errorCode: 503, errorMessage: "Server couldn't be reached." };
+		show_debug_message(_data);
+	}
 	
 	if (struct_exists(_data, "errorCode"))
 	{

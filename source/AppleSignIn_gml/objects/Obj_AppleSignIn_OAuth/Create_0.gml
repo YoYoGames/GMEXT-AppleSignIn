@@ -46,7 +46,7 @@ redirect_uri = undefined;
 // create a match between the request and obtained code|token in the server side.
 state = __apple_signin_state_create(32, "123456789");
 
-apple_signin_login_oauth(state);
+AppleSignIn_LoginOAuth(state);
 
 search_request = undefined;
 search_tries = 50;
