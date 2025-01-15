@@ -265,7 +265,9 @@ function AppleSignIn_GetCredentialState() {}
  * This wiki is meant to be used as a reference to the different Apple Sign In extension functions for iOS, tvOS and macOS, and as such does not contain a tutorial on how to set up the API in your games.
  * We recommend that before doing anything with this extension, you take a moment to look over the official Apple Sign In API documentation, as it will familiarise you with many of the terms and concepts required to use the extension correctly:
  * 
- * * [Apple Developer: Sign In With Apple](https://developer.apple.com/sign-in-with-apple/get-started/)
+ * > [Apple Developer: Sign In With Apple](https://developer.apple.com/sign-in-with-apple/get-started/)
+ * 
+ * The Sign In functionality is available on macOS, iOS and tvOS using the SDK and on all other platforms using OAuth.
  * 
  * @section Guides
  * @description The following guides are available for this extension: 
