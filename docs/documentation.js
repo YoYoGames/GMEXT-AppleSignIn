@@ -2,7 +2,7 @@
 
 /** 
  * @const applesignin_scope
- * @desc These constants specify the scope.
+ * @desc These constants specify the scope. The scope determines which information the user has access to.
  * @member applesignin_scope_fullname Requests the user's full name.
  * @member applesignin_scope_email Requests the user's e-mail address.
  * @const_end
@@ -201,7 +201,7 @@ function AppleSignIn_GetCredentialState() {}
  * @desc This function triggers the OAuth process for logging in with an Apple account.
  * 
  * @param {string} state A unique state string used for security and validation during the OAuth process.
- * @param {String} scopes The scopes that will be requested when performing the OAuth authorization. Defaults to `"name email"`.
+ * @param {String} [scopes] The scopes that will be requested when performing the OAuth authorisation. Defaults to `"name email"`.
  * 
  * @event social
  * @desc 
@@ -215,9 +215,10 @@ function AppleSignIn_GetCredentialState() {}
  * ```gml
  * AppleSignIn_LoginOAuth(state);
  * ```
- * The above code starts the login process for logging in.
+ * The above code starts the login process for logging in using Apple credentials. Since the optional `scopes` parameter isn't provided, the default scopes are requested.
+ * The function call will bring up a browser window in which the user can grant your game access to the requested scopes on the user's behalf.
  * 
- * This then triggers a ${event.social}: 
+ * After the function call a ${event.social} is triggered: 
  * ```gml
  * /// Social Async Event
  * if (async_load[? "type"] == "apple_signin_login_oauth") {
@@ -225,11 +226,30 @@ function AppleSignIn_GetCredentialState() {}
  *     client_id = async_load[? "client_id"];
  *     redirect_uri = async_load[? "redirect_uri"];
  *     
- *     // Query the token from the server
- *     // ...
+ *     // Start querying the token from the server
+ *     alarm[0] = game_get_speed(gamespeed_fps);
  * }
  * ```
  * 
+ * If the user confirms, an authorization code is sent to the URL that you've set under **OAuth Redirect URL** in the [Extension Options](manual.gamemaker.io/monthly/en/The_Asset_Editors/Extensions.htm#extension_options).
+ * The Redirect URL is a URL on your own server to which the authorisation code is sent. Your server code needs to handle receiving the code and then send a POST request to the following endpoint to exchange the code for the access token: `https://appleid.apple.com/auth/token`.
+ * 
+ * If all went well, at one point your server will have received the access token. It is then up to your game to periodically (e.g., using an ${event.alarm}) send a POST request to the same server (to the search URL) to check if it has the token. The code to do this might look as follows:
+ * 
+ * ```gml
+ * /// Alarm 0
+ * var _headers = ds_map_create();
+ * ds_map_add(_headers, "Content-Type", "application/json");
+ * 
+ * var _body = json_stringify({ state: state })
+ * 
+ * search_request = http_request(search_url, "POST", _headers, _body);
+ * ds_map_destroy(_headers);
+ * ```
+ * 
+ * The HTTP request will either return a valid token or no token (e.g., when the server hasn't received the token yet) in the ${event.http}.
+ * If no valid token was received, a new HTTP request can be made after a certain amount of time (e.g., after 1 second).
+ * To limit the number of HTTP requests sent to your server this can be limited to a maximum number of tries.
  * @func_end
  */
 
@@ -264,7 +284,7 @@ function AppleSignIn_GetCredentialState() {}
  * @title General
  * @desc This is a reference guide to all the functions used by the Apple Sign In Extension,
  * along with any constants that they may use or return and examples of code that use them.
- * Some of the examples are Extended Examples that also show code from callbacks in the ${event.social}.
+ * Some of the examples also show code from callbacks in the ${event.social}.
  *
  * @section_func
  * @desc These are the functions of the Apple Sign In extension:
