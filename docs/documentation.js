@@ -206,7 +206,7 @@ function AppleSignIn_GetCredentialState() {}
  * @event social
  * @desc 
  * @member {string} type The string `"apple_signin_login_oauth"`
- * @member {string} nonce The nonce returned
+ * @member {string} nonce The nonce sent with the request
  * @member {string} client_id The client ID
  * @member {string} redirect_uri The redirect URI
  * @event_end
@@ -218,9 +218,9 @@ function AppleSignIn_GetCredentialState() {}
  * The above code starts the login process for logging in using Apple credentials. Since the optional `scopes` parameter isn't provided, the default scopes are requested.
  * The function call will bring up a browser window in which the user can grant your game access to the requested scopes on the user's behalf.
  * 
- * After the function call a ${event.social} is triggered: 
+ * The function finally triggers a ${event.social}: 
  * ```gml
- * /// Social Async Event
+ * /// Async - Social Event
  * if (async_load[? "type"] == "apple_signin_login_oauth") {
  *     nonce = async_load[? "nonce"];
  *     client_id = async_load[? "client_id"];
@@ -232,12 +232,12 @@ function AppleSignIn_GetCredentialState() {}
  * ```
  * 
  * If the user confirms, an authorization code is sent to the URL that you've set under **OAuth Redirect URL** in the [Extension Options](manual.gamemaker.io/monthly/en/The_Asset_Editors/Extensions.htm#extension_options).
- * The Redirect URL is a URL on your own server to which the authorisation code is sent. Your server code needs to handle receiving the code and then send a POST request to the following endpoint to exchange the code for the access token: `https://appleid.apple.com/auth/token`.
+ * The Redirect URL is a URL on your own server to which the authorisation code is sent. Your server code needs to handle receiving the code and then send a POST request to the following endpoint to exchange the code for the access token: `https://appleid.apple.com/auth/token`. See the demo project for more information on what to include in the request to this endpoint.
  * 
  * If all went well, at one point your server will have received the access token. It is then up to your game to periodically (e.g., using an ${event.alarm}) send a POST request to the same server (to the search URL) to check if it has the token. The code to do this might look as follows:
  * 
  * ```gml
- * /// Alarm 0
+ * /// Alarm 0 Event
  * var _headers = ds_map_create();
  * ds_map_add(_headers, "Content-Type", "application/json");
  * 
