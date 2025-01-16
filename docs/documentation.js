@@ -205,7 +205,7 @@ function AppleSignIn_GetCredentialState() {}
  * 
  * @event social
  * @desc 
- * @member {string} type The string `"apple_signin_login_oauth"`
+ * @member {string} type The string `"AppleSignIn_LoginOAuth"`
  * @member {string} nonce The nonce sent with the request
  * @member {string} client_id The client ID
  * @member {string} redirect_uri The redirect URI
