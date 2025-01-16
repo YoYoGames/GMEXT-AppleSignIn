@@ -6,7 +6,7 @@ To test your apps, you'll need to use the latest beta version of Xcode 11 and up
 the latest OS versions (which may require you to update to beta versions).
 
 Additionally, for macOS, to use this extension you will be required to provide a **Signing Identifier** in the 
-[macOS Game Options](https://manual.yoyogames.com/Settings/Game_Options/macOS.htm):
+[macOS Game Options](https://manual.gamemaker.io/monthly/en/Settings/Game_Options/macOS.htm):
 
 ![Signing Identifier](assets/macOS_Game_Options_Signing_Identifier.png "Signing Identifier")
 
@@ -22,7 +22,7 @@ and add it into GameMaker as an [included file](https://manual.yoyogames.com/Set
 
 ![Provisioning Profile in Included Files](assets/Provisioning_Profile_in_Included_Files.png "Provisioning Profile")
 
-This profile should be valid for the **App ID**, **Team Identifier** and **Signing Identifier** used in the [Game Options](https://manual.yoyogames.com/Settings/Game_Options/macOS.htm).
+This profile should be valid for the **App ID**, **Team Identifier** and **Signing Identifier** used in the [Game Options](https://manual.gamemaker.io/monthly/en/Settings/Game_Options/macOS.htm).
 
 Once you have everything set up, it's simply a case of adding a button object into your game and having 
 it call the appropriate functions when pressed, and then parsing the ${event.social} to get the necessary data from the callback.
