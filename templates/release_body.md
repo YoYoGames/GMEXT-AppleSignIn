@@ -12,6 +12,7 @@ This extension allows for authenticating using your Apple credentials.
 
 ## FEATURES 
 
+- Adds Apple iCloud authentication to your projects
 
 ## DOCUMENTATION
 
