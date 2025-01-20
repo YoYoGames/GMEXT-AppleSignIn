@@ -1,5 +1,5 @@
-* ### [Apple Sign In](Home)
-* ### [Guides](#)
+* ### [Apple Sign In](home)
+* ### Guides
   * ### [Setup](setup)
-* ### [Modules](#)
-  * ### [General](General)
+* ### Modules
+  * ### [General](general)
