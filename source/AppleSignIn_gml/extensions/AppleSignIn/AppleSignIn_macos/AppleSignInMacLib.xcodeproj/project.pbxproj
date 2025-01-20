@@ -19,17 +19,31 @@
 		2B9F112A2A1081410059D11A /* Ref.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B9F11272A1081410059D11A /* Ref.h */; };
 		2B9F112B2A1081410059D11A /* Extension_Interface.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B9F11282A1081410059D11A /* Extension_Interface.h */; };
 		2B9F112C2A1081410059D11A /* YYRValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B9F11292A1081410059D11A /* YYRValue.h */; };
+		6A56C5262D3E9298008F99CE /* libAppleSignInMacLib.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B7821DA278CE36400EE6530 /* libAppleSignInMacLib.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6A56C5252D3E9260008F99CE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "${PROJECT_DIR}/..";
+			dstSubfolderSpec = 0;
+			files = (
+				6A56C5262D3E9298008F99CE /* libAppleSignInMacLib.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		2B4CA9332A25962200D42716 /* YY_AppleSignInControllerPresentationContextProviding.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = YY_AppleSignInControllerPresentationContextProviding.mm; path = "../../../../GMEXT-AppleSignIn/source/AppleSignIn_gml/extensions/AppleSignIn/iOSSource/YY_AppleSignInControllerPresentationContextProviding.mm"; sourceTree = "<group>"; };
-		2B4CA9342A25962200D42716 /* YY_AppleSignInDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YY_AppleSignInDelegate.h; path = "../../../../GMEXT-AppleSignIn/source/AppleSignIn_gml/extensions/AppleSignIn/iOSSource/YY_AppleSignInDelegate.h"; sourceTree = "<group>"; };
-		2B4CA9352A25962200D42716 /* YY_AppleSignInEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YY_AppleSignInEnums.h; path = "../../../../GMEXT-AppleSignIn/source/AppleSignIn_gml/extensions/AppleSignIn/iOSSource/YY_AppleSignInEnums.h"; sourceTree = "<group>"; };
-		2B4CA9362A25962200D42716 /* YY_AppleSignInDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = YY_AppleSignInDelegate.mm; path = "../../../../GMEXT-AppleSignIn/source/AppleSignIn_gml/extensions/AppleSignIn/iOSSource/YY_AppleSignInDelegate.mm"; sourceTree = "<group>"; };
-		2B4CA9372A25962200D42716 /* YY_AppleSignInEnums.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = YY_AppleSignInEnums.mm; path = "../../../../GMEXT-AppleSignIn/source/AppleSignIn_gml/extensions/AppleSignIn/iOSSource/YY_AppleSignInEnums.mm"; sourceTree = "<group>"; };
-		2B4CA9382A25962300D42716 /* YY_AppleSignIn.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = YY_AppleSignIn.mm; path = "../../../../GMEXT-AppleSignIn/source/AppleSignIn_gml/extensions/AppleSignIn/iOSSource/YY_AppleSignIn.mm"; sourceTree = "<group>"; };
-		2B4CA9392A25962300D42716 /* YY_AppleSignIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YY_AppleSignIn.h; path = "../../../../GMEXT-AppleSignIn/source/AppleSignIn_gml/extensions/AppleSignIn/iOSSource/YY_AppleSignIn.h"; sourceTree = "<group>"; };
-		2B4CA93A2A25962300D42716 /* YY_AppleSignInControllerPresentationContextProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YY_AppleSignInControllerPresentationContextProviding.h; path = "../../../../GMEXT-AppleSignIn/source/AppleSignIn_gml/extensions/AppleSignIn/iOSSource/YY_AppleSignInControllerPresentationContextProviding.h"; sourceTree = "<group>"; };
+		2B4CA9332A25962200D42716 /* YY_AppleSignInControllerPresentationContextProviding.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = YY_AppleSignInControllerPresentationContextProviding.mm; path = ../../iOSSource/YY_AppleSignInControllerPresentationContextProviding.mm; sourceTree = "<group>"; };
+		2B4CA9342A25962200D42716 /* YY_AppleSignInDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YY_AppleSignInDelegate.h; path = ../../iOSSource/YY_AppleSignInDelegate.h; sourceTree = "<group>"; };
+		2B4CA9352A25962200D42716 /* YY_AppleSignInEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YY_AppleSignInEnums.h; path = ../../iOSSource/YY_AppleSignInEnums.h; sourceTree = "<group>"; };
+		2B4CA9362A25962200D42716 /* YY_AppleSignInDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = YY_AppleSignInDelegate.mm; path = ../../iOSSource/YY_AppleSignInDelegate.mm; sourceTree = "<group>"; };
+		2B4CA9372A25962200D42716 /* YY_AppleSignInEnums.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = YY_AppleSignInEnums.mm; path = ../../iOSSource/YY_AppleSignInEnums.mm; sourceTree = "<group>"; };
+		2B4CA9382A25962300D42716 /* YY_AppleSignIn.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = YY_AppleSignIn.mm; path = ../../iOSSource/YY_AppleSignIn.mm; sourceTree = "<group>"; };
+		2B4CA9392A25962300D42716 /* YY_AppleSignIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YY_AppleSignIn.h; path = ../../iOSSource/YY_AppleSignIn.h; sourceTree = "<group>"; };
+		2B4CA93A2A25962300D42716 /* YY_AppleSignInControllerPresentationContextProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YY_AppleSignInControllerPresentationContextProviding.h; path = ../../iOSSource/YY_AppleSignInControllerPresentationContextProviding.h; sourceTree = "<group>"; };
 		2B4CA9432A259B0400D42716 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/PrivateFrameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		2B5A6F242A1BFC380015F35D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2B5A6F262A1BFC670015F35D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -131,6 +145,7 @@
 				2B7821D6278CE36400EE6530 /* Headers */,
 				2B7821D7278CE36400EE6530 /* Sources */,
 				2B7821D8278CE36400EE6530 /* Frameworks */,
+				6A56C5252D3E9260008F99CE /* CopyFiles */,
 			);
 			buildRules = (
 			);
