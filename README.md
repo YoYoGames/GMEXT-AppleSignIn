@@ -9,7 +9,7 @@ IOS SOURCE: `source/AppleSignIn_gml/extensions/AppleSignIn/iOSSource/`
 
 TVOS SOURCE: `source/AppleSignIn_gml/extensions/AppleSignIn/tvOSSource/`
 
-MACOS SOURCE: `source/AppleSignIn_xcode/`
+MACOS SOURCE: `source/AppleSignIn_gml/extensions/AppleSignIn/AppleSignIn_macos/`
 
 ---
 
