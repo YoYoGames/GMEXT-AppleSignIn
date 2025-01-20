@@ -14,7 +14,7 @@
   "copyToTargets":3035426170322551022,
   "description":"",
   "exportToGame":true,
-  "extensionVersion":"1.2.0",
+  "extensionVersion":"1.2.1",
   "files":[
     {"$GMExtensionFile":"","%Name":"","constants":[
         {"$GMExtensionConstant":"","%Name":"applesignin_scope_fullname","hidden":false,"name":"applesignin_scope_fullname","resourceType":"GMExtensionConstant","resourceVersion":"2.0","value":"\"fullname\"",},
