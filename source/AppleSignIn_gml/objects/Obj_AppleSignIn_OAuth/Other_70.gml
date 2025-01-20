@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (async_load[? "type"] == "apple_signin_login_oauth") {
+if (async_load[? "type"] == "AppleSignIn_LoginOAuth") {
 	
 	nonce = async_load[? "nonce"];
 	client_id = async_load[? "client_id"];

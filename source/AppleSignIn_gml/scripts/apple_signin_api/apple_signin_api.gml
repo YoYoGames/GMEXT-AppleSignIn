@@ -419,7 +419,7 @@ function AppleSignIn_LoginOAuth(_state, _scopes = "name email") {
 
 	// Trigger async event which marks the moment of oauth init
 	var _async_load = ds_map_create();
-	_async_load[? "type"] = "apple_signin_login_oauth";
+	_async_load[? "type"] = "AppleSignIn_LoginOAuth";
 	_async_load[? "redirect_uri"] = _redirect_uri;
 	_async_load[? "client_id"] = _client_id;
 	_async_load[? "nonce"] = _nonce;
